@@ -63,5 +63,64 @@ int main() {
 
     printf("New Element s4 ROLLNO  = %d", s4->rollno);
 
+
+    temp = head ;
+    while(temp->next != NULL) {
+        temp = temp->next;
+    }
+    temp->next = s4;
+   
+    temp = head;
+    printf("Linked List Traversal \n\n");
+    while(temp != NULL) {
+        printf("Name = %s\n", temp->name);
+        temp = temp->next;
+    }
+
+    struct Student *s5;
+    s5 = (struct Student*) malloc(sizeof(struct Student));
+    s5->rollno = 0;
+    strcpy(s5->name,"Abhijith M\0");
+    s5->height = 150.0;
+    s5->next=NULL;
+
+    s5->next = head;
+    head = s5;
+
+
+    temp = head;
+    printf("Linked List Traversal \n\n");
+    while(temp != NULL) {
+        printf("Name = %s\n", temp->name);
+        temp = temp->next;
+    }
+    // Try adding a new record at the 3rd position;
+    struct Student *s6;
+    s6 = (struct Student*) malloc(sizeof(struct Student));
+    s6->rollno = 9;
+    strcpy(s6->name,"Aditya Suresh\0");
+    s6->height = 164.0;
+    s6->next=NULL;
+
+
+    temp = head;
+    int i=0;
+    while(i<1) {
+        temp = temp->next;
+        i+=1;
+    }
+
+    struct Student *t1 = temp->next;
+    temp->next = s6;
+    s6->next = t1;
+
+    temp = head;
+    printf("Linked List Traversal \n\n");
+    while(temp != NULL) {
+        printf("Name = %s\n", temp->name);
+        temp = temp->next;
+    }
+
+
     return 0;
 }
