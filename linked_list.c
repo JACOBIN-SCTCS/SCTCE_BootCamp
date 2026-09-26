@@ -15,6 +15,18 @@ struct Student  {
 
 int main() {
 
+
+    struct Student te ;
+    te.rollno = -1;
+    strcpy(te.name, "Abhinav MS");
+    te.height = 140.0;
+
+    struct Student t2 ;
+    te.rollno = -2;
+    strcpy(te.name, "Sharan P");
+    te.height = 155.0;
+
+
     struct Student s1;
     s1.rollno = 1;
     strcpy(s1.name,"Jacob\0");
