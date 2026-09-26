@@ -133,6 +133,38 @@ int main() {
         temp = temp->next;
     }
 
+    printf("Deleting from beginning of linked list\n");
+    struct Student *deltmp = head;
+    if(deltmp != NULL) { 
+
+        head = head->next;
+        free(deltmp);
+    }
+
+    temp = head;
+    printf("Linked List Traversal \n\n");
+    while(temp != NULL) {
+        printf("Name = %s\n", temp->name);
+        temp = temp->next;
+    }
+
+    printf("Deleting from front of linked list\n");
+    // Please write the edge case: only head is present
+    temp = head ;
+    while(temp->next->next != NULL) {
+        temp = temp->next;
+    }
+    struct Student *last = temp->next;
+    temp->next = NULL;
+    free(last);
+
+    temp = head;
+    printf("Linked List Traversal \n\n");
+    while(temp != NULL) {
+        printf("Name = %s\n", temp->name);
+        temp = temp->next;
+    }
+
 
     return 0;
 }
